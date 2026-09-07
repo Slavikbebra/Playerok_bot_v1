@@ -1,0 +1,29 @@
+[07.09.2026 18:05:52] DEBUG · urllib3.connectionpool Starting new HTTPS connection (1): api.github.com:443
+[07.09.2026 18:05:54] DEBUG · urllib3.connectionpool https://api.github.com:443 "GET /repos/alleexxeeyy/playerok-universal/releases HTTP/1.1" 200 5681
+[07.09.2026 18:05:54] INFO · universal.updater    У вас установлена последняя версия: 1.21
+[07.09.2026 18:05:54] INFO · universal            
+[07.09.2026 18:05:59] INFO · universal            Playerok аккаунт успешно авторизован.
+[07.09.2026 18:06:00] DEBUG · urllib3.connectionpool Starting new HTTPS connection (1): api.telegram.org:443
+[07.09.2026 18:06:02] DEBUG · urllib3.connectionpool https://api.telegram.org:443 "GET /bot8884822624:AAHhR9RnvcUv5tZlfaOqLWDR8CiGUsAhQ6I/getMe HTTP/1.1" 200 420
+[07.09.2026 18:06:02] INFO · universal            Telegram бот успешно работает.
+[07.09.2026 18:06:02] DEBUG · asyncio              Using proactor: IocpProactor
+[07.09.2026 18:06:02] DEBUG · asyncio              Using proactor: IocpProactor
+[07.09.2026 18:06:05] INFO · universal.playerok   
+[07.09.2026 18:06:05] INFO · universal.playerok   Playerok бот запущен и активен
+[07.09.2026 18:06:05] INFO · universal.playerok   
+[07.09.2026 18:06:05] INFO · universal.playerok   ───────────────────────────────────────
+[07.09.2026 18:06:05] INFO · universal.playerok   Информация об аккаунте:
+[07.09.2026 18:06:05] INFO · universal.playerok    · ID: 1f036657-43e6-6b90-1d4f-0d10c443656e
+[07.09.2026 18:06:05] INFO · universal.playerok    · Никнейм: Slavik2666
+[07.09.2026 18:06:05] INFO · universal.playerok    · Баланс: 8814.7₽
+[07.09.2026 18:06:05] INFO · universal.playerok      · Доступно: 7802₽
+[07.09.2026 18:06:05] INFO · universal.playerok      · В ожидании: 1012.7₽
+[07.09.2026 18:06:05] INFO · universal.playerok      · Заморожено: 0₽
+[07.09.2026 18:06:05] INFO · universal.playerok    · Активные продажи: 0
+[07.09.2026 18:06:05] INFO · universal.playerok    · Активные покупки: 0
+[07.09.2026 18:06:05] INFO · universal.playerok   ───────────────────────────────────────
+[07.09.2026 18:06:05] DEBUG · asyncio              Using proactor: IocpProactor
+[07.09.2026 18:06:05] DEBUG · asyncio              Using proactor: IocpProactor
+[07.09.2026 18:06:05] INFO · universal.telegram   
+[07.09.2026 18:06:05] INFO · universal.telegram   Telegram бот @panel_playerok_bot запущен и активен
+[07.09.2026 18:06:07] DEBUG · playerokapi.listener WS -> {'type': 'connection_ack'}
