@@ -1351,7 +1351,7 @@ class PlayerokBot:
             ):
                 self.account.update_deal(event.deal.id, ItemDealStatuses.SENT)
                 logger.info(
-                    f"{Fore.YELLOW}Сделка подтверждена автоматически "
+                    f"{Fore.YELLOW}Заказ автоматически переведён в ожидание подтверждения покупателя "
                     f"{Fore.WHITE}(https://playerok.com/deal/{event.deal.id})"
                 )
 
@@ -1405,15 +1405,15 @@ class PlayerokBot:
         
         status_frmtd = "Неизвестный"
         if event.deal.status is ItemDealStatuses.PAID: 
-            status_frmtd = "Оплачено"
+            status_frmtd = "Ожидаем подтверждения от продавца"
         elif event.deal.status is ItemDealStatuses.PENDING: 
-            status_frmtd = "В ожидании"
+            status_frmtd = "Ожидаем подтверждения от продавца"
         elif event.deal.status is ItemDealStatuses.SENT: 
-            status_frmtd = "Товар отправлен"
+            status_frmtd = "Ожидаем подтверждения от покупателя"
         elif event.deal.status is ItemDealStatuses.CONFIRMED: 
-            status_frmtd = "Выполнено"
+            status_frmtd = "Заказ выполнен"
         elif event.deal.status is ItemDealStatuses.ROLLED_BACK: 
-            status_frmtd = "Возврат"
+            status_frmtd = "Возврат средств"
 
         self.log_deal_status_changed(event.deal, status_frmtd)
         if (

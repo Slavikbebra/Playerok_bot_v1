@@ -22,20 +22,20 @@ def _get_deal_info(deal: ItemDeal):
     status = deal.status
     if status:
         if status == ItemDealStatuses.PAID:
-            status_sym = "🟢"
-            status_str = "Оплачен"
+            status_sym = "🟡"
+            status_str = "Ожидаем подтверждения от продавца"
         elif status == ItemDealStatuses.PENDING:
             status_sym = "🟡"
-            status_str = "Ждёт отправки"
+            status_str = "Ожидаем подтверждения от продавца"
         elif status == ItemDealStatuses.SENT:
-            status_sym = "🟣"
-            status_str = "Продавец подтвердил"
-        elif status in (ItemDealStatuses.CONFIRMED, ItemDealStatuses.CONFIRMED_AUTOMATICALLY):
-            status_sym = "🔵"
-            status_str = "Выполнен"
-        elif status == ItemDealStatuses.ROLLED_BACK:
             status_sym = "🟠"
-            status_str = "Возврат"
+            status_str = "Ожидаем подтверждения от покупателя"
+        elif status in (ItemDealStatuses.CONFIRMED, ItemDealStatuses.CONFIRMED_AUTOMATICALLY):
+            status_sym = "🟢"
+            status_str = "Заказ выполнен"
+        elif status == ItemDealStatuses.ROLLED_BACK:
+            status_sym = "🔴"
+            status_str = "Возврат средств"
 
     has_problem = " ・ <i>🤬 Проблема</i>" if deal.has_problem else ""
 

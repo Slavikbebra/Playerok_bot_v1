@@ -172,17 +172,17 @@ def msg_deal(data: ItemDeal) -> MsgDeal:
     
     status = "-"
     if data.status == ItemDealStatuses.PAID:
-        status = "Оплачено"
+        status = "Ожидаем подтверждения от продавца"
     elif data.status == ItemDealStatuses.PENDING:
-        status = "В ожидании"
+        status = "Ожидаем подтверждения от продавца"
     elif data.status == ItemDealStatuses.SENT:
-        status = "Товар отправлен"
+        status = "Ожидаем подтверждения от покупателя"
     elif data.status == ItemDealStatuses.CONFIRMED:
-        status = "Выполнено"
+        status = "Заказ выполнен"
     elif data.status == ItemDealStatuses.CONFIRMED_AUTOMATICALLY:
-        status = "Подтверждено автоматически"
+        status = "Заказ выполнен"
     elif data.status == ItemDealStatuses.ROLLED_BACK:
-        status = "Возврат"
+        status = "Возврат средств"
 
     cr_at = "-"
     iso_dt = data.created_at

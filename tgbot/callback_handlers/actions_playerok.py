@@ -97,7 +97,7 @@ async def callback_fast_change_deal_status(callback: CallbackQuery, callback_dat
         acc.update_deal(deal_id, status)
 
         if status == ItemDealStatuses.SENT:
-            text = "✅ Сделка <b>успешно подтверждена</b>"
+            text = "✅ Заказ <b>передан на подтверждение покупателю</b>"
         elif status == ItemDealStatuses.ROLLED_BACK:
             text = "✅ По сделке <b>успешно оформлен возврат</b>"
 

@@ -23,20 +23,20 @@ def deal_text(deal: ItemDeal):
     status = deal.status
     if status:
         if status == ItemDealStatuses.PAID:
-            status_sym = "🟢"
-            status_str = "Оплачен"
+            status_sym = "🟡"
+            status_str = "Ожидаем подтверждения от продавца"
         elif status == ItemDealStatuses.PENDING:
             status_sym = "🟡"
-            status_str = "Ждёт отправки"
+            status_str = "Ожидаем подтверждения от продавца"
         elif status == ItemDealStatuses.SENT:
-            status_sym = "🟣"
-            status_str = "Продавец подтвердил"
-        elif status in (ItemDealStatuses.CONFIRMED, ItemDealStatuses.CONFIRMED_AUTOMATICALLY):
-            status_sym = "🔵"
-            status_str = "Выполнен"
-        elif status == ItemDealStatuses.ROLLED_BACK:
             status_sym = "🟠"
-            status_str = "Возврат"
+            status_str = "Ожидаем подтверждения от покупателя"
+        elif status in (ItemDealStatuses.CONFIRMED, ItemDealStatuses.CONFIRMED_AUTOMATICALLY):
+            status_sym = "🟢"
+            status_str = "Заказ выполнен"
+        elif status == ItemDealStatuses.ROLLED_BACK:
+            status_sym = "🔴"
+            status_str = "Возврат средств"
 
     data_str = ""
     if deal.item.data_fields:
@@ -77,7 +77,7 @@ def deal_kb(deal: ItemDeal, last_page=0):
     
     if deal.direction == ItemDealDirections.OUT:
         sent_btn = InlineKeyboardButton(
-            text="☑️ Подтвердить", 
+            text="✅ Выполнить заказ", 
             callback_data=calls.ChangeDealStatus(id=deal.id, st="SENT").pack()
         )
         rows.insert(0, [
@@ -120,7 +120,7 @@ def deal_kb(deal: ItemDeal, last_page=0):
         
         if deal.status == ItemDealStatuses.SENT:
             rows.insert(0, [InlineKeyboardButton(
-                text="☑️ Подтвердить", 
+                text="☑️ Подтвердить получение", 
                 callback_data=calls.ChangeDealStatus(id=deal.id, st="CONFIRMED").pack()
             )])
             if not deal.has_problem:
